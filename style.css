@@ -2,58 +2,112 @@ body{
 
 margin:0;
 font-family:Arial;
+color:white;
 
 background:linear-gradient(
 180deg,
-#0a0a0a 0%,
-#1a0028 40%,
-#2d004d 70%,
-#4b0082 100%
+#000000,
+#1a0026,
+#2d004d,
+#4b0082
 );
 
-color:white;
+overflow-x:hidden;
 
 }
 
-header{
+
+/* NUAGES */
+
+.clouds{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:200%;
+height:100%;
+
+background:radial-gradient(
+circle at 20% 40%,
+rgba(255,255,255,0.15),
+transparent 40%
+),
+
+radial-gradient(
+circle at 70% 60%,
+rgba(255,255,255,0.1),
+transparent 40%
+),
+
+radial-gradient(
+circle at 40% 80%,
+rgba(255,255,255,0.08),
+transparent 40%
+);
+
+animation:cloudMove 80s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes cloudMove{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+
+/* HEADER VERRE */
+
+.header{
 
 display:flex;
-justify-content:space-between;
+justify-content:center;
 align-items:center;
 
 padding:20px;
 
-background:black;
+background:rgba(0,0,0,0.4);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
 
 }
 
-.logo{
+.logo img{
 
-height:50px;
-
-}
-
-nav a{
-
-margin-left:20px;
-color:white;
-text-decoration:none;
+height:70px;
 
 }
+
+
+/* CONFIGURATEUR */
 
 .commande-container{
 
 display:flex;
+gap:40px;
 
 padding:40px;
 
-gap:40px;
-
 }
+
+
+/* FORMULAIRE */
 
 .form-left{
 
-width:300px;
+width:320px;
 
 display:flex;
 flex-direction:column;
@@ -67,12 +121,18 @@ flex-direction:column;
 margin-bottom:15px;
 padding:10px;
 
-background:#222;
+background:#111;
+
+border:1px solid rgba(255,255,255,0.2);
+
 color:white;
 
-border:none;
+border-radius:6px;
 
 }
+
+
+/* BOUTON FUTUR */
 
 .cta{
 
@@ -80,15 +140,13 @@ background:linear-gradient(45deg,#7a00ff,#ff4df2);
 
 color:white;
 
-padding:12px 25px;
+padding:12px;
 
 border:none;
 
 border-radius:10px;
 
 cursor:pointer;
-
-font-weight:bold;
 
 transition:0.3s;
 
@@ -102,11 +160,8 @@ box-shadow:0 0 20px #7a00ff;
 
 }
 
-.form-right{
 
-flex:1;
-
-}
+/* COULEURS */
 
 .color-picker{
 
@@ -139,117 +194,23 @@ transition:0.2s;
 
 transform:scale(1.1);
 
-box-shadow:0 0 15px white;
-
 }
+
+
+/* VIEWER 3D */
 
 #viewer{
 
-width:600px;
+width:650px;
 height:500px;
 
-background:radial-gradient(circle,#ffffff,#d9d9d9);
+background:radial-gradient(circle,#ffffff,#d6d6d6);
 
 border-radius:15px;
 
 box-shadow:
+0 20px 40px rgba(0,0,0,0.6);
 
-0 20px 40px rgba(0,0,0,0.5);
-
-}
-
-.header{
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:20px;
-
-background:rgba(0,0,0,0.6);
-
-backdrop-filter:blur(10px);
-
-border-bottom:1px solid rgba(255,255,255,0.1);
-
-}
-
-.logo{
-
-position:absolute;
-
-left:50%;
-transform:translateX(-50%);
-
-}
-
-.logo img{
-
-height:70px;
-
-}
-
-.pieces{
-
-display:flex;
-
-justify-content:center;
-
-gap:40px;
-
-margin-top:60px;
-
-}
-
-.piece{
-
-width:300px;
-
-text-align:center;
-
-}
-
-.piece img{
-
-width:300px;
-height:300px;
-
-object-fit:cover;
-
-border-radius:10px;
-
-
-}
-
-.clouds{
-
-position:fixed;
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-background:url("clouds.png");
-
-background-size:cover;
-
-opacity:0.15;
-
-animation:moveClouds 120s linear infinite;
-
-pointer-events:none;
-
-}
-
-@keyframes moveClouds{
-
-0%{
-transform:translateX(0);
-}
-
-100%{
-transform:translateX(-1000px);
-}
+position:relative;
 
 }
