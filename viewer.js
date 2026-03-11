@@ -1,13 +1,32 @@
 let scene,camera,renderer,controls;
+let corps,logo,contour;
 
 init();
 animate();
+
+cloud.rotation.y += 0.0005;
 
 function init(){
 
 const viewer = document.getElementById("viewer");
 
 scene = new THREE.Scene();
+  
+// nuages 3D
+
+const cloudGeometry = new THREE.SphereGeometry(80,32,32);
+
+const cloudMaterial = new THREE.MeshStandardMaterial({
+color:0xffffff,
+transparent:true,
+opacity:0.15
+});
+
+const cloud = new THREE.Mesh(cloudGeometry,cloudMaterial);
+
+cloud.position.set(0,-20,-100);
+
+scene.add(cloud);
 
 camera = new THREE.PerspectiveCamera(
 75,
