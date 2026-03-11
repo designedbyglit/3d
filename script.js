@@ -92,10 +92,8 @@ loader.load("piece_logo.STL",function(geometry){
 geometry.computeVertexNormals();
 
 let material = new THREE.MeshStandardMaterial({
-
-color:0x000000,
+color:0xffffff,
 roughness:0.5
-
 });
 
 logo = new THREE.Mesh(geometry,material);
@@ -104,11 +102,14 @@ geometry.center();
 
 logo.scale.set(0.7,0.7,0.7);
 
-// POSITION
-logo.position.set(0,0,0);
+// déplacer la pièce
+logo.position.set(0,0,3);
+
+// rotation
+logo.rotation.set(0,0,0);
 
 scene.add(logo);
-  
+
 });
 
 }
@@ -166,6 +167,7 @@ link.click();
 
 
 }
+
 
 
 
