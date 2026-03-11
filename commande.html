@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Configurer ta pièce</title>
+<title>Configurer</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -14,22 +14,21 @@
 
 <body>
 
-<header>
+<div class="clouds"></div>
 
-<a href="index.html">
-<img src="logo.png" class="logo">
+<header class="header">
+
+<a href="index.html" class="logo">
+<img src="logo.png">
 </a>
 
-<nav>
-<a href="index.html">Accueil</a>
-<a href="commande.html">Commander</a>
-</nav>
-
 </header>
+
 
 <section class="commande">
 
 <div class="commande-container">
+
 
 <div class="form-left">
 
@@ -42,16 +41,18 @@
 <input type="email">
 
 <label>Moteur</label>
+
 <select>
 <option>AM6</option>
 <option>Derbi</option>
 </select>
 
 <label>Type de pièce</label>
+
 <select>
 <option>Cache allumage</option>
 <option>Cache obturateur</option>
-<option>Récupérateur de fluide</option>
+<option>Récupérateur</option>
 </select>
 
 <label>Texte</label>
@@ -63,25 +64,12 @@
 <label>Détails</label>
 <textarea></textarea>
 
-<button onclick="exportImage()" class="cta">
-Exporter image
-</button>
+<button class="cta">Envoyer</button>
 
 </div>
 
+
 <div class="form-right">
-
-<h3>Choisir la zone</h3>
-
-<label>
-<input type="radio" name="zone" value="corps" checked>
-Corps
-</label>
-
-<label>
-<input type="radio" name="zone" value="logo">
-Logo
-</label>
 
 <h3>Couleurs</h3>
 
@@ -97,8 +85,6 @@ Logo
 
 </div>
 
-<h3>Aperçu 3D</h3>
-
 <div id="viewer"></div>
 
 </div>
@@ -107,16 +93,14 @@ Logo
 
 </section>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/STLLoader.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/TransformControls.js"></script>
-
 <script src="script.js"></script>
 
 </body>
-
 </html>
