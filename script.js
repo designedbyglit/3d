@@ -105,7 +105,7 @@ geometry.center();
 logo.scale.set(0.7,0.7,0.7);
 
 // POSITION
-logo.position.set(0,120,100);
+logo.position.set(0,20,25);
 
 scene.add(logo);
   
@@ -166,5 +166,6 @@ link.click();
 
 
 }
+
 
 
