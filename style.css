@@ -2,7 +2,15 @@ body{
 
 margin:0;
 font-family:Arial;
-background:#111;
+
+background:linear-gradient(
+180deg,
+#0a0a0a 0%,
+#1a0028 40%,
+#2d004d 70%,
+#4b0082 100%
+);
+
 color:white;
 
 }
@@ -68,14 +76,29 @@ border:none;
 
 .cta{
 
-background:purple;
+background:linear-gradient(45deg,#7a00ff,#ff4df2);
+
 color:white;
 
-padding:12px;
+padding:12px 25px;
 
 border:none;
 
+border-radius:10px;
+
 cursor:pointer;
+
+font-weight:bold;
+
+transition:0.3s;
+
+}
+
+.cta:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 20px #7a00ff;
 
 }
 
@@ -102,11 +125,21 @@ margin-bottom:20px;
 width:75px;
 height:75px;
 
-border-radius:8px;
+border-radius:12px;
+
+border:2px solid white;
 
 cursor:pointer;
 
-border:3px solid white;
+transition:0.2s;
+
+}
+
+.color:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 15px white;
 
 }
 
@@ -115,23 +148,29 @@ border:3px solid white;
 width:600px;
 height:500px;
 
-background:#eee;
+background:radial-gradient(circle,#ffffff,#d9d9d9);
 
-border-radius:10px;
+border-radius:15px;
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,0.5);
 
 }
 
 .header{
 
 display:flex;
+justify-content:center;
 align-items:center;
-justify-content:space-between;
-
-background:black;
 
 padding:20px;
 
-position:relative;
+background:rgba(0,0,0,0.6);
+
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
 
 }
 
@@ -178,5 +217,39 @@ height:300px;
 object-fit:cover;
 
 border-radius:10px;
+
+
+}
+
+.clouds{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:url("clouds.png");
+
+background-size:cover;
+
+opacity:0.15;
+
+animation:moveClouds 120s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes moveClouds{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-1000px);
+}
 
 }
