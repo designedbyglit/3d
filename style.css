@@ -2,183 +2,125 @@ body{
 
 margin:0;
 font-family:Arial;
-
+background:#0a0a0a;
 color:white;
-
-background:linear-gradient(
-180deg,
-#000000,
-#1a0026,
-#2d004d,
-#4b0082
-);
-
-}
-
-
-/* NUAGES */
-
-.clouds{
-
-position:fixed;
-top:0;
-left:0;
-
-width:200%;
-height:100%;
-
-background:
-
-radial-gradient(circle at 20% 40%,rgba(255,255,255,0.15),transparent 40%),
-radial-gradient(circle at 70% 60%,rgba(255,255,255,0.1),transparent 40%),
-radial-gradient(circle at 40% 80%,rgba(255,255,255,0.08),transparent 40%);
-
-animation:cloudMove 80s linear infinite;
-
-pointer-events:none;
-
-}
-
-@keyframes cloudMove{
-
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
 
 }
 
 
 /* HEADER */
 
-.header{
+header{
 
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
 
-padding:20px;
+padding:20px 60px;
 
-background:rgba(0,0,0,0.5);
-
+background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 
-}
-
-.logo img{
-
-height:70px;
+position:fixed;
+width:100%;
 
 }
 
+nav a{
 
-/* ACCUEIL */
+margin-left:30px;
+text-decoration:none;
+color:white;
+
+}
+
+
+/* HERO */
 
 .hero{
 
-text-align:center;
+height:100vh;
 
-padding:120px 20px;
+background-image:url("moto.jpg");
+background-size:cover;
+background-position:center;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
 
 }
 
 .hero h1{
 
-font-size:50px;
+font-size:60px;
 
 }
 
 .cta{
 
+margin-top:20px;
+
 background:linear-gradient(45deg,#7a00ff,#ff4df2);
 
 padding:15px 30px;
 
-border:none;
+border-radius:10px;
+
+text-decoration:none;
+color:white;
+
+}
+
+
+/* PRODUITS */
+
+.produits{
+
+padding:100px 60px;
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.card{
+
+background:#111;
 
 border-radius:10px;
 
-color:white;
+overflow:hidden;
 
-font-size:18px;
+}
 
-cursor:pointer;
+.card img{
 
-text-decoration:none;
+width:100%;
 
 }
 
 
 /* CONFIGURATEUR */
 
-.commande-container{
-
-display:flex;
-
-gap:40px;
-
-padding:40px;
-
-}
-
-.form-left{
-
-width:320px;
-
-display:flex;
-flex-direction:column;
-
-}
-
-.form-left input,
-.form-left select,
-.form-left textarea{
-
-margin-bottom:15px;
-
-padding:10px;
-
-background:#111;
-
-border:1px solid rgba(255,255,255,0.2);
-
-color:white;
-
-border-radius:6px;
-
-}
-
-
-.color-picker{
-
-display:grid;
-
-grid-template-columns:repeat(4,75px);
-
-gap:15px;
-
-margin-bottom:20px;
-
-}
-
-.color{
-
-width:75px;
-height:75px;
-
-border-radius:10px;
-
-border:2px solid white;
-
-cursor:pointer;
-
-}
-
 #viewer{
 
-width:650px;
+width:700px;
 height:500px;
 
-background:radial-gradient(circle,#ffffff,#d6d6d6);
+background:#eaeaea;
 
 border-radius:15px;
+
+margin-top:40px;
 
 }
