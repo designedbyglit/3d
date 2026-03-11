@@ -1,7 +1,7 @@
 body{
 
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#0a0a0a;
 color:white;
 
@@ -13,24 +13,56 @@ color:white;
 header{
 
 display:flex;
-justify-content:space-between;
+justify-content:center;
 align-items:center;
 
-padding:20px 60px;
+padding:15px 40px;
 
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 
 position:fixed;
+top:0;
 width:100%;
+z-index:1000;
+
+}
+
+
+/* LOGO */
+
+.logo img{
+
+height:40px;
+width:auto;
+display:block;
+
+}
+
+
+/* MENU */
+
+nav{
+
+position:absolute;
+right:40px;
 
 }
 
 nav a{
 
-margin-left:30px;
+margin-left:25px;
 text-decoration:none;
 color:white;
+font-size:16px;
+
+transition:0.3s;
+
+}
+
+nav a:hover{
+
+color:#b366ff;
 
 }
 
@@ -52,17 +84,30 @@ align-items:center;
 
 text-align:center;
 
+padding-top:80px;
+
 }
 
 .hero h1{
 
 font-size:60px;
+margin:0;
 
 }
 
+.hero p{
+
+font-size:20px;
+opacity:0.8;
+
+}
+
+
+/* BOUTON */
+
 .cta{
 
-margin-top:20px;
+margin-top:25px;
 
 background:linear-gradient(45deg,#7a00ff,#ff4df2);
 
@@ -73,22 +118,43 @@ border-radius:10px;
 text-decoration:none;
 color:white;
 
+font-weight:bold;
+
+transition:0.3s;
+
+}
+
+.cta:hover{
+
+transform:scale(1.05);
+box-shadow:0 0 20px #7a00ff;
+
 }
 
 
-/* PRODUITS */
+/* SECTION PRODUITS */
 
 .produits{
 
-padding:100px 60px;
+padding:120px 60px;
+text-align:center;
 
 }
+
+.produits h2{
+
+font-size:40px;
+margin-bottom:40px;
+
+}
+
+
+/* GRID PRODUITS */
 
 .grid{
 
 display:grid;
 grid-template-columns:repeat(3,1fr);
-
 gap:30px;
 
 }
@@ -101,16 +167,32 @@ border-radius:10px;
 
 overflow:hidden;
 
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
 }
 
 .card img{
 
 width:100%;
+height:250px;
+object-fit:cover;
+
+}
+
+.card h3{
+
+padding:15px;
 
 }
 
 
-/* CONFIGURATEUR */
+/* CONFIGURATEUR 3D */
 
 #viewer{
 
