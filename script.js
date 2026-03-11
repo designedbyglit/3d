@@ -10,6 +10,8 @@ function init(){
 const viewer = document.getElementById("viewer");
 
 scene = new THREE.Scene();
+const axesHelper = new THREE.AxesHelper(50);
+scene.add(axesHelper);
 
 scene.background = new THREE.Color(0xeeeeee);
 
@@ -167,6 +169,7 @@ link.click();
 
 
 }
+
 
 
 
