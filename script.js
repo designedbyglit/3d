@@ -2,6 +2,8 @@ let scene, camera, renderer, controls;
 
 let corps, logo;
 
+let transformControls;
+
 init();
 animate();
 
@@ -12,6 +14,9 @@ const viewer = document.getElementById("viewer");
 scene = new THREE.Scene();
 const axesHelper = new THREE.AxesHelper(50);
 scene.add(axesHelper);
+transformControls = new THREE.TransformControls(camera, renderer.domElement);
+
+scene.add(transformControls);
 
 scene.background = new THREE.Color(0xeeeeee);
 
@@ -112,6 +117,8 @@ logo.rotation.set(0,0,0);
 
 scene.add(logo);
 
+transformControls.attach(corps);
+
 });
 
 }
@@ -169,6 +176,7 @@ link.click();
 
 
 }
+
 
 
 
